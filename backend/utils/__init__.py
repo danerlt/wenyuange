@@ -1,9 +1,9 @@
 #!/usr/bin/env python  
 # -*- coding:utf-8 -*-  
 """ 
-@author: danerlt 
+@author: danerlt
 @file: __init__.py.py 
-@time: 2022-11-07
+@time: 2022-11-08
 @contact: danerlt001@gmail.com
-@desc: URL路由模块
+@desc: 工具模块
 """

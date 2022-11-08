@@ -5,5 +5,5 @@
 @file: __init__.py.py 
 @time: 2022-11-07
 @contact: danerlt001@gmail.com
-@desc: 
+@desc: 数据库migrate相关
 """
