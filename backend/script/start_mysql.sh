@@ -13,5 +13,7 @@ docker run  -d  \
 -v "$mysql_data_path":/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=123456 \
 mysql:8.0 \
---lower_case_table_names=1
-
+--lower_case_table_names=1 \
+--character-set-server=utf8mb4 \
+--collation-server=utf8mb4_unicode_ci \
+--skip-character-set-client-handshake
