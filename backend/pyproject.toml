@@ -1,0 +1,20 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "danerlt", email = "danerlt001@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.68.1",
+    "typer>=0.7.0",
+    "sqlalchemy>=1.4.43",
+]
+requires-python = ">=3.6"
+license = {text = "MIT"}
+
+[tool.pdm]
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"

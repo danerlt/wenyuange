@@ -8,13 +8,28 @@
 @desc: 
 """
 
-
 import typer
 
+from typing import Union
 
-def main(name: str):
-    print(f"Hello {name}")
+from fastapi import FastAPI
+from pydantic import BaseModel
 
 
-if __name__ == "__main__":
-    typer.run(main)
+class Item(BaseModel):
+    name: str
+    description: Union[str, None] = None
+    price: float
+    tax: Union[float, None] = None
+
+
+app = FastAPI()
+
+
+@app.post("/items/")
+async def create_item(item: Item):
+    return item
+
+
+if __name__ == '__main__':
+    app.run()
