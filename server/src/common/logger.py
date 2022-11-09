@@ -1,16 +1,16 @@
-# !/usr/bin/env python
+#!/usr/bin/env python  
 # -*- coding:utf-8 -*-  
 """ 
 @author: danerlt 
-@file: logutil.py
-@time: 2022-08-10
+@file: logger.py 
+@time: 2022-11-09
 @contact: danerlt001@gmail.com
-@desc: 日志工具类
+@desc: 
 """
+
 import sys
 import logging
 from logging.handlers import TimedRotatingFileHandler
-from pathlib import Path
 
 from common.const import ROOT_PATH
 from common import config
@@ -66,13 +66,4 @@ def creater_logger(name=None):
     return logger
 
 
-def init_logger():
-    """初始化日志
-    :param
-    """
-    if not LOG_DIR_PATH.exists():
-        LOG_DIR_PATH.mkdir()
-    logging.getLogger = creater_logger
-
-
-init_logger()
+logger = creater_logger()

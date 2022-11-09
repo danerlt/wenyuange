@@ -1,0 +1,23 @@
+# server配置
+server:
+  host: 0.0.0.0  # host ip地址
+  port: 5000     # 端口
+  debug: true   # 是否开启debug模式
+
+
+# 数据配置
+data:
+  # 数据库配置
+  # sqlalchemy uri 格式如下 dialect+driver://username:password@host:port/database
+  # s.g mysql+pymysql://scott:tiger@localhost/foo
+  # s.g sqlite:///C:\\path\\to\\foo.db    格式: sqlite://<nohostname>/<path>
+  db_uri: "mysql+pymysql://root:123456@127.0.0.1:3306/wenyuange"
+
+
+# 日志相关logger:
+logger:
+  level: "DEBUG" # 日志级别 默认是INFO
+  file_path: "logs" # 日志文件保存路径
+  when: "D" # 日志轮转的单位 默认为D 表示天 可以填的值  S：秒 M：分钟 H：小时 D：天
+  interval: 7 # 日志轮转的间隔 默认7天
+  backup_count: 30 # 已经轮转的日志文件最大保留个数 默认30天

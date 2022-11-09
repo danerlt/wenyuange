@@ -7,13 +7,12 @@
 @contact: danerlt001@gmail.com
 @desc: 
 """
-import logging
 
-from utils import logutil
+from common.logger import logger, creater_logger
 
-api_logger = logging.getLogger("api")
-app_logger = logging.getLogger("app")
-default_logger = logging.getLogger()
+api_logger = creater_logger("api")
+app_logger = logger
+default_logger = creater_logger()
 
 api_logger.info("aaaa")
 app_logger.info("bbbb")
