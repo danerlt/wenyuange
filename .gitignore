@@ -1,6 +1,8 @@
 # Byte-compiled / optimized / DLL files
 .idea/
 data/
+logs/
+*.log
 *.pdm.toml
 __pycache__/
 *.py[cod]
