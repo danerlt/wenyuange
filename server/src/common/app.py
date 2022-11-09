@@ -10,7 +10,11 @@
 
 from flask import Flask
 
+from common.json_encoder import OtherEncoder
+
 app = Flask(__name__)
+# 自定义json_decoder
+app.json_encoder = OtherEncoder
 
 
 @app.get("/health")
