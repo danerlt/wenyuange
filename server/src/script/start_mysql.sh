@@ -28,7 +28,7 @@ if [ ! -d "$mysql_mount_path" ]; then
   mkdir -p "$mysql_mount_path"
 fi
 
-if docker inspect $container_name -f '{{.Name}}' >/dev/null; then
+if docker inspect ${container_name} --format "{{.Name}}" | grep "/${container_name}"; then
   echo "docker container $container_name exist, can't create!!!"
   exit 1
 else
@@ -45,7 +45,8 @@ else
       --lower_case_table_names=1 \
       --character-set-server=utf8mb4 \
       --collation-server=utf8mb4_unicode_ci \
-      --skip-character-set-client-handshake
+      --skip-character-set-client-handshake \
+      2 >/dev/null
   )
   if [ "$ret" == "0" ]; then
     echo "start container $container_name success"
